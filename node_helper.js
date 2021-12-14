@@ -17,6 +17,7 @@ module.exports = NodeHelper.create({
     },
 
     getGemstones: function(url) {
+        var self = this;
         var c = new Crawler({
             maxConnections : 10,
             // This will be called for each crawled page
@@ -35,8 +36,8 @@ module.exports = NodeHelper.create({
                         imgSrc,
                         mineralName
                     };
-                    this.sendSocketNotification('GEMSTONE_RESULT', result);
-                    this.scope.data = result;
+                    self.sendSocketNotification('GEMSTONE_RESULT', result);
+                    self.scope.data = result;
                 }
                 done();
             }
