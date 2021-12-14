@@ -11,6 +11,9 @@ const fs = require('fs');
 module.exports = NodeHelper.create({
     start: function() {
         console.log("Starting module: " + this.name);
+        this.scope = {
+            data: null
+        }
     },
 
     getGemstones: function(url) {
@@ -33,6 +36,7 @@ module.exports = NodeHelper.create({
                         mineralName
                     };
                     this.sendSocketNotification('GEMSTONE_RESULT', result);
+                    this.scope.data = result;
                 }
                 done();
             }
@@ -44,7 +48,7 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'GET_GEMSTONES') {
-            if (this.scope.timestamp === this.getDate() && this.scope.data !== null && this.config.sign === this.scope.data.dscope.sunsign) {
+            if (this.scope.data !== null) {
                 this.sendSocketNotification('GEMSTONE_RESULT', this.scope.data);
             } else {
                 this.getGemstones(payload);
