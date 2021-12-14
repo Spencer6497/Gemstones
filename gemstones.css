@@ -3,3 +3,11 @@
     margin-right: auto;
     text-align: center;
 }
+
+.maxWidth {
+    max-width: 300px;
+}
+
+.noBottomMargin {
+    margin-bottom: none;
+}
