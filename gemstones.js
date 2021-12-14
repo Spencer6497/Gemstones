@@ -9,7 +9,7 @@ Module.register("gemstones",{
 	// Default module config.
 	defaults: {
 		text: "Gemstones",
-		updateInterval: 24 * 60 * 1000 // every 24 hours
+		updateInterval: 24 * 60 * 60 * 1000 // every 24 hours
 	},
 
 	// Override dom generator.
@@ -18,7 +18,6 @@ Module.register("gemstones",{
 		var caption = this.caption;
 
 		var wrapper = document.createElement("div");
-		// wrapper.innerHTML = this.config.text;
 
 		// If not yet loaded, display loading
 		if (!this.loaded) {
@@ -47,7 +46,6 @@ Module.register("gemstones",{
 	// Start sequence
     start: function() {
 		Log.info('Starting module: ' + this.name);
-        // this.sendSocketNotification('CONFIG', this.config);
 		this.scheduleUpdate();
     },
 

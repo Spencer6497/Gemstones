@@ -31,6 +31,7 @@ module.exports = NodeHelper.create({
                     var src = $("tr > td > a > img").slice(0,1)[0].attribs.src;
                     var mineralName = $("tr > td > a > img").slice(0,1)[0].attribs.alt.split(" ")[4];
                     var filename = src.split("/").pop();
+                    filename = filename.replace('Small', '');
                     var imgSrc = `http://www.webmineral.com/specimens/photos/${filename}`;
                     var result = {
                         imgSrc,
@@ -49,19 +50,7 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'GET_GEMSTONES') {
-            if (this.scope.data !== null) {
-                this.sendSocketNotification('GEMSTONE_RESULT', this.scope.data);
-            } else {
-                this.getGemstones(payload);
-            }
+            this.getGemstones(payload);
         }
-        // if (notification === 'CONFIG') {
-        //     this.config = payload;
-        // }
-		// let debug = this.config.debug;
-		// if (debug !== false)
-		// {
-	    //  console.log("From Node_Helper ~~ Sign: "+this.config.sign+"  Icon set: "+this.config.iconset+" Show Tomorrow: "+this.config.extend);
-    	// }
     }
 });
