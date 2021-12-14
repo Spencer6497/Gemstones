@@ -1,0 +1,15 @@
+{
+  "name": "gemstones",
+  "version": "1.0.0",
+  "description": "MagicMirror Module for displaying a random gemstone every day.",
+  "main": "gemstones.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Spencer Peace",
+  "license": "MIT",
+  "dependencies": {
+    "crawler": "^1.3.0",
+    "fs": "0.0.1-security"
+  }
+}
