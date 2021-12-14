@@ -27,7 +27,7 @@ Module.register("gemstones",{
 
 		var titleWrapper = document.createElement('div');
 		titleWrapper.classList.add('center'); // Add css classes here for styling
-		titleWrapper.innerHTML = `<h3 class=noBottomMargin>Rock of the day:</h3>`
+		titleWrapper.innerHTML = `<h3 class=bottomMargin>Rock of the day:</h3>`
 		wrapper.appendChild(titleWrapper);
 
 		var imgWrapper = document.createElement('div');
