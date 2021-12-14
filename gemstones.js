@@ -28,16 +28,16 @@ Module.register("gemstones",{
 
 		var titleWrapper = document.createElement('div');
 		titleWrapper.classList.add(); // Add css classes here for styling
-		titleWrapper.innerHTML = `<h1>Rock of the day:</h1>`
+		titleWrapper.innerHTML = `<h3>Rock of the day:</h3>`
 		wrapper.appendChild(titleWrapper);
 
 		var imgWrapper = document.createElement('div');
-		imgWrapper.classList.add(); // Add css classes here for styling
+		imgWrapper.classList.add('center'); // Add css classes here for styling
 		imgWrapper.innerHTML = `<img src=${imgSrc}>`
 		wrapper.appendChild(imgWrapper);
 
 		var captionWrapper = document.createElement('div');
-		captionWrapper.classList.add(); // Add css classes here for styling
+		captionWrapper.classList.add('center'); // Add css classes here for styling
 		captionWrapper.innerHTML = caption;
 		wrapper.appendChild(captionWrapper);
 
