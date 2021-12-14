@@ -26,6 +26,11 @@ Module.register("gemstones",{
             return wrapper;
         }
 
+		var titleWrapper = document.createElement('div');
+		titleWrapper.classList.add(); // Add css classes here for styling
+		titleWrapper.innerHTML = `<h1>Rock of the day:</h1>`
+		wrapper.appendChild(titleWrapper);
+
 		var imgWrapper = document.createElement('div');
 		imgWrapper.classList.add(); // Add css classes here for styling
 		imgWrapper.innerHTML = `<img src=${imgSrc}>`
